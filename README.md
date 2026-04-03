@@ -40,4 +40,4 @@ npm start
 
 ## Author
 
-Anish
+Anish jrall
