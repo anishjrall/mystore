@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
+import { toast } from 'react-toastify'
 
 export default function Login() {
 
@@ -16,10 +17,14 @@ export default function Login() {
 
     try {
       setLoading(true)
+
       await login({ email, password })
+
+      toast.success("Login successful")
       navigate('/')
+
     } catch (error) {
-      console.log("Login failed")
+      toast.error("Invalid email or password")
     } finally {
       setLoading(false)
     }
